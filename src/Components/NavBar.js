@@ -1,4 +1,4 @@
-import CartWidget from './Landing/cartWidget'
+import CartWidget from './Landing/CartWidget'
 import'./NavBar.css'
 
 export default function NavBar (){

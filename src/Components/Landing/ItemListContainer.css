@@ -1,18 +1,11 @@
-.itemContainer {
-    width: 250px;
-    height: 620px;
-    border: black solid;
-    margin-left: 12%;
-    background-color: white;
-    margin-bottom: 20px;
+.itemsLanding {
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   margin-top: 50px;
 }
-
-
-.imgLanding{
-    width: 150px;
-    height: 250px;
-    border-radius: 0%;
-}
-.detalles{
-    visibility: hidden;
+h2{
+    margin-top: 40px;
 }

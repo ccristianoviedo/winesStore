@@ -1,0 +1,13 @@
+.item {
+    width: 250px;
+    height: 620px;
+    border: black solid;
+    margin-left: 12%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.imgUrl{
+    width: 150px;
+    height: 250px;
+    border-radius: 0%;
+}

@@ -1,45 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './ItemCount.css'
 
-const ItemCount=({counter, stock, subtract, sumar, reset})=>{
-   if (counter<stock){  
-            if(counter>=1 && stock>=1){
-                return(
-                    <>
+const ItemCount=({stock, initial})=>{
+    const [counter, setCounter]= useState(initial);
+    if (stock<1){
+        return <h2>NO HAY STOCK</h2>
+    }else if (stock>=1){
+        const sumar=()=>{
+            const newValue = counter+1;
+            if(newValue <= stock){
+                setCounter(newValue)
+            }
+        }    
+        const subtract=()=>{
+            const newValue = counter-1;
+            if(newValue >= initial){
+                setCounter(newValue)
+            }
+        }
+        const onAdd=()=>{
+            alert(`Agrego ${counter} articulos al carrito de compras.`)
+        }        
+        return(
+            <>
+                <div className='counters'>
+                    <div className='counter'>
                         <button onClick={subtract} className="btn btn-secondary">RESTAR</button>
                         <button onClick={sumar} className="btn btn-secondary">COMPRAR</button>
-                        <button onClick={reset} className="btn btn-secondary">ANULAR</button>
+                    </div>
+                    <div  className='counter'>
                         <h3>{counter}</h3>
-                        <button className="btn btn-secondary">AGREGAR A CARRITO</button>  
-                    </>
-                )
-            }else if (counter<=1 && stock>=1){
-                return(
-                    <>  
-                        <button className="btn btn-secondary">RESTAR</button>
-                        <button onClick={sumar} className="btn btn-secondary">COMPRAR</button>
-                        <button className="btn btn-secondary">ANULAR</button>           
-                        <h3>{counter}</h3>
-                        <button className="btn btn-secondary">AGREGAR A CARRITO</button>  
-                    </>
-                )  
-            }       
-    } else if (stock<=0){
-        return(
-            <>              
-                <h3>SIN STOCK!</h3>
+                        <button className="btn btn-secondary" onClick={onAdd}>AGREGAR A CARRITO</button>
+                </div>
+            </div>
             </>
         )
     } 
-    else return(
-        <> 
-           <button onClick={subtract} className="btn btn-secondary">RESTAR</button>
-           <button className="btn btn-secondary">COMPRAR</button>
-           <button onClick={reset} className="btn btn-secondary">ANULAR</button>                   
-           <h3>{counter}</h3>
-           <button className="btn btn-primary">AGREGAR A CARRITO</button>
-        </>
-    )  
-}
+}   
 export default ItemCount;

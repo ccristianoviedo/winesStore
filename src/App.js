@@ -1,6 +1,6 @@
 import './App.css';
-import ItemListContainer from './Components/Landing/itemListContainer';
-import NameStore from './Components/nameStore';
+import ItemListContainer from './Components/Landing/ItemListContainer';
+import NameStore from './Components/NameStore';
 import NavBar from './Components/NavBar';
 
 function App() {
@@ -8,11 +8,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NameStore/>
-        <NavBar/>
-        <div className='itemsLanding'>
-          <ItemListContainer />
-        </div>
+        <NavBar/>      
       </header>
+      <nav>
+        <ItemListContainer />      
+      </nav>     
     </div>
   );
 }
